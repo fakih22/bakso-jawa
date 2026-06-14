@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BaksoJawa | Royal Javanese Gastronomy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#f4c430",
+                        "outline-variant": "#4e4634",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1b1b1b",
+                        "tertiary-container": "#ccc9c9",
+                        "on-primary": "#3d2e00",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#695200",
+                        "primary-fixed": "#ffdf90",
+                        "on-surface-variant": "#d1c5ad",
+                        "inverse-primary": "#755b00",
+                        "inverse-on-surface": "#313030",
+                        "outline": "#9a907a",
+                        "surface-tint": "#f0c12c",
+                        "surface-container": "#20201f",
+                        "secondary-container": "#b20213",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary": "#e8e5e5",
+                        "on-secondary-container": "#ffbdb6",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "surface-variant": "#353535",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "primary": "#ffe3a1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#555454",
+                        "secondary": "#ffb4ab",
+                        "primary-fixed-dim": "#f0c12c",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary-fixed-variant": "#584400",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#353535",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "on-secondary": "#690006",
+                        "on-secondary-fixed": "#410002",
+                        "inverse-surface": "#e5e2e1",
+                        "brand-gold": "#F4C430",
+                        "brand-red": "#D62828"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-padding-desktop": "64px",
+                        "grid-gutter": "24px",
+                        "container-padding-mobile": "20px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-lg": ["EB Garamond"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-md": ["18px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes rotate-bowl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-rotate-bowl { animation: rotate-bowl 10s linear infinite; }
+        
+        @keyframes steam {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+        }
+        .steam-particle { animation: steam 3s infinite ease-out; }
+
+        .glass-card {
+            background: rgba(27, 27, 27, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 196, 48, 0.1);
+        }
+
+        .batik-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #F4C430, transparent);
+            opacity: 0.3;
+        }
+
+        .custom-cursor {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #F4C430;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #F4C430; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg overflow-x-hidden">
+<!-- Loading Screen -->
+<div class="fixed inset-0 z-[100] bg-surface flex flex-col items-center justify-center transition-opacity duration-700" id="loader">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 border-t-2 border-primary-container rounded-full animate-rotate-bowl"></div>
+<img alt="BaksoJawa" class="w-16 h-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkMNjY0HBQzdCTUpZwS667KLvFb8FUGBfXglS7xMctD4QrwB9YYjJTD2qFvcH5-5qDD6ZRTa7k_8ej0-SbWYvbzuwse6qAADteA0c0J3lmiG5l1w4NbqWPqaJ-YIdkbwxvpZcVDKM-bitWXd6dRcdMnQ-TB7v-MVzGHI8OEg0Oj2cOfhArbT3NSALvaVYqF5jo_qUZHCrKUysIcpDAZmWSqKptH6wt1fneZSvH6W57kRfyxgejeghL2QBfUNvcpsM728tcH7BYA"/>
+</div>
+<p class="mt-8 font-display-lg text-title-md text-primary-container tracking-widest animate-pulse">SUGENG RAWUH</p>
+</div>
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-20">
+<nav class="flex justify-between items-center px-container-padding-desktop max-w-screen-2xl mx-auto h-full">
+<div class="flex items-center gap-4">
+<img alt="BaksoJawa Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkMNjY0HBQzdCTUpZwS667KLvFb8FUGBfXglS7xMctD4QrwB9YYjJTD2qFvcH5-5qDD6ZRTa7k_8ej0-SbWYvbzuwse6qAADteA0c0J3lmiG5l1w4NbqWPqaJ-YIdkbwxvpZcVDKM-bitWXd6dRcdMnQ-TB7v-MVzGHI8OEg0Oj2cOfhArbT3NSALvaVYqF5jo_qUZHCrKUysIcpDAZmWSqKptH6wt1fneZSvH6W57kRfyxgejeghL2QBfUNvcpsM728tcH7BYA"/>
+<span class="font-display-lg text-title-md text-primary-container tracking-wider">BaksoJawa</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-primary-container border-b-2 border-primary-container pb-1" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#menu">Menu</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#faq">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded hover:backdrop-brightness-125 transition-all scale-95 active:scale-90">
+                Reserve Now
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background z-10"></div>
+<img alt="Hero Background" class="w-full h-full object-cover scale-110 motion-safe:animate-[pulse_10s_ease-in-out_infinite]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEKWlSTwSDKwcJvJtL5hxTyBSWTV20Iiyp4e49hqRFYIVz3qxHlqnLTCdY5t46p599yVY6XkCpAJ8mWUKgt6nWZrI6NzUkS70pb9oF8p6AyrZ7dn5aWdFsldIO8vfl2Jy-XzTORLlLPKmKFrgI5zOXGIU3qUj5x3H-ztTEXxPdCpw2wrl2ytNh2RJzKUtDwbPAy_tnivkdWBcuvkImobpbiZoALirQG6J4YZf7oPqsBxI6jMFN3bOAkaePEN8eCBDI2u92xxMhfw" style="transform-origin: center;"/>
+</div>
+
+<div class="relative z-20 text-center px-container-padding-mobile max-w-4xl">
+<div class="mb-6 flex justify-center opacity-0 translate-y-8 transition-all duration-1000 ease-out" data-reveal="">
+<div class="relative">
+<span class="material-symbols-outlined text-brand-gold text-6xl animate-bounce">soup_kitchen</span>
+<!-- Steam effect -->
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 w-full flex justify-center gap-1">
+<div class="w-1 h-8 bg-on-surface/20 blur-sm rounded-full steam-particle" style="animation-delay: 0s"></div>
+<div class="w-1 h-12 bg-on-surface/20 blur-sm rounded-full steam-particle" style="animation-delay: 0.5s"></div>
+<div class="w-1 h-10 bg-on-surface/20 blur-sm rounded-full steam-particle" style="animation-delay: 1.2s"></div>
+</div>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-6xl text-primary mb-6 leading-tight opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out" data-reveal="">
+                    Bakso Jawa Asli, <span class="italic text-brand-gold font-medium">Rasane Nendang</span> Gawe Kangen
+                </h1>
+<p class="font-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto opacity-0 translate-y-8 transition-all duration-1000 delay-500 ease-out" data-reveal="">
+                    Nikmati sensasi bakso khas Jawa dengan kaldu gurih yang meresap sempurna. Diracik dengan bumbu rahasia warisan leluhur.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 translate-y-8 transition-all duration-1000 delay-700 ease-out" data-reveal="">
+<a class="bg-brand-gold text-background px-8 py-4 font-label-caps text-label-caps rounded-full hover:scale-105 transition-transform" href="#menu">
+                        Jelajahi Menu
+                    </a>
+<a class="border border-brand-gold text-brand-gold px-8 py-4 font-label-caps text-label-caps rounded-full hover:bg-brand-gold/10 transition-colors" href="#about">
+                        Cerita Kami
+                    </a>
+</div>
+<div class="mt-16 italic font-display-lg text-title-md text-on-surface-variant opacity-60 opacity-0 transition-all duration-1000 delay-1000" data-reveal="">
+                    "Mangan ora mangan sing penting kumpul..."
+                </div>
+</div>
+</section>
+<!-- About Us -->
+<section class="py-section-gap px-container-padding-desktop max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center" id="about">
+<div class="relative group opacity-0 -translate-x-12 transition-all duration-1000 ease-out" data-reveal="">
+<div class="absolute -inset-4 border border-brand-gold/20 rounded-xl group-hover:-inset-6 transition-all"></div>
+<img class="w-full h-[500px] object-cover rounded-xl shadow-2xl relative z-10 grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" data-alt="A vintage-style high-end photograph of a traditional Javanese artisan preparing meatballs in a warm, low-lit kitchen. The atmosphere is filled with subtle steam and the warm glow of hanging amber lights, highlighting the rich textures of the weathered wood and copper pots. The scene feels authentic, nostalgic, and premium, with a deep moody color palette of shadows and gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi8NJFt9_5pgjfaEmtbTyIYf32rYVh2F90Jg6_bByN7j7zFA8gTPOvka5gNqGgqoQwTplnBSjO8cL9DkjBsihMhoJyUs5jA68XUFS9RNHdZ4z-bAfi3SVbXZXAkCtO24sh8DWwAATsuX3Rt-NtVj9e06xpzkyPyq9zWC0cAAmN9HBOhFUcXW2C6yFgwcmkxQoEN3SO2qbHB-hB6c49aGKxNCPiAWKrrg_Z8_R2-lP9LOxPYRuLAQQGb3NKIxXngpLw77uO5U4xFA"/>
+</div>
+<div class="opacity-0 translate-x-12 transition-all duration-1000 ease-out" data-reveal="">
+<span class="font-label-caps text-label-caps text-brand-gold mb-4 block">WARISAN LELUHUR</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-8 leading-tight">
+                    Dedikasi Rasa <br/>Saking Manah
+                </h2>
+<p class="font-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                    BaksoJawa lahir dari kerinduan akan kehangatan dapur nenek di pinggiran Jogja. Setiap butir bakso kami adalah manifestasi dari ketelitian, pemilihan bahan terbaik, dan kesabaran dalam mengolah kaldu selama lebih dari 12 jam.
+                </p>
+<div class="p-8 glass-card border-l-4 border-l-brand-gold italic font-display-lg text-headline-lg text-brand-gold">
+                    "Roso iku ora mung soal panganan, nanging uga kenangan."
+                </div>
+</div>
+</section>
+<!-- Advantages (Bento-ish Grid) -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-container-padding-desktop max-w-screen-2xl mx-auto">
+<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700" data-reveal="">
+<span class="font-label-caps text-label-caps text-brand-gold mb-2 block uppercase">Keunggulan</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Kenapa BaksoJawa?</h2>
+<div class="batik-divider max-w-xs mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Advantage 1 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[100ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">restaurant</span>
+<h3 class="font-title-md text-primary mb-3">Daging Segar</h3>
+<p class="text-body-sm text-on-surface-variant">Dipilih setiap subuh langsung dari peternak lokal terbaik untuk tekstur kenyal alami.</p>
+</div>
+<!-- Advantage 2 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[200ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">potted_plant</span>
+<h3 class="font-title-md text-primary mb-3">Kaldu Berjam-jam</h3>
+<p class="text-body-sm text-on-surface-variant">Proses perebusan tulang sumsum selama 15 jam menghasilkan kaldu yang gurih dan kental.</p>
+</div>
+<!-- Advantage 3 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[300ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">history_edu</span>
+<h3 class="font-title-md text-primary mb-3">Resep Turun-Temurun</h3>
+<p class="text-body-sm text-on-surface-variant">Rahasia bumbu rempah asli Javanese yang diwariskan dari tiga generasi keluarga kami.</p>
+</div>
+<!-- Advantage 4 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[400ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">eco</span>
+<h3 class="font-title-md text-primary mb-3">Tanpa Pengawet</h3>
+<p class="text-body-sm text-on-surface-variant">Komitmen kami menyajikan hidangan sehat tanpa tambahan bahan kimia berbahaya.</p>
+</div>
+<!-- Advantage 5 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[500ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">verified</span>
+<h3 class="font-title-md text-primary mb-3">Sertifikasi Halal</h3>
+<p class="text-body-sm text-on-surface-variant">Menjamin ketenangan dalam setiap santapan dengan standar kebersihan tertinggi.</p>
+</div>
+<!-- Advantage 6 -->
+<div class="p-8 glass-card hover:border-brand-gold/40 transition-all group opacity-0 translate-y-8 transition-all duration-700 delay-[600ms]" data-reveal="">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform">favorite</span>
+<h3 class="font-title-md text-primary mb-3">Layanan Ramah</h3>
+<p class="text-body-sm text-on-surface-variant">Keramahan khas Jawa yang membuat Anda merasa seperti makan di rumah sendiri.</p>
+</div>
+</div>
+<div class="text-center mt-12 font-display-lg text-title-md text-on-surface-variant italic opacity-0 transition-all duration-700" data-reveal="">
+                    "Sing Penting Dudu Larang, Nanging Enak Lan Marem."
+                </div>
+</div>
+</section>
+<!-- Product Catalog -->
+<section class="py-section-gap px-container-padding-desktop max-w-screen-2xl mx-auto" id="menu">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="opacity-0 -translate-x-8 transition-all duration-700" data-reveal="">
+<span class="font-label-caps text-label-caps text-brand-gold mb-2 block uppercase">Daftar Rasa</span>
+<h2 class="font-display-lg text-display-lg text-primary">Menu Spesialis Kami</h2>
+</div>
+<div class="hidden md:block opacity-0 translate-x-8 transition-all duration-700" data-reveal="">
+<p class="text-on-surface-variant max-w-xs text-right">Setiap porsi disajikan dengan mie kuning, bihun, sayuran segar, dan bawang goreng melimpah.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Product 1 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700" data-reveal="">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A macro shot of a 'Bakso Urat Jumbo' dish in a rustic ceramic bowl. The large, textured meatball is sliced open to reveal its rich, meaty interior, glistening with natural juices. Deep brown broth surrounds the meatballs, garnished with vibrant green bok choy and crispy fried shallots. The lighting is high-end food photography style, using a warm side light to emphasize the steam and textures against a dark, moody background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYr6iOlmE1RO4_1Vr-VXoBADLTCjjlPMYzDYUK0gNSNLklkMzRX-lsxSJx9XX8q38Q3mRVHeVDo4o_PoMJUsDadDROs3XPWXY2JbwaFIFLxgVooGz_KT_Syv3EZfeyDf9ozCvAZt7gIl1XNEFrgDld85eOFduk6vMcnP0j8rXO5PQURz4kOWd0RsTOIhXOqsKsbYD3xUzLW8va292_xki2vpxNEaOuqKoxWUflILeoumyFVECsE4zLmeTDhTSbLM_0JcVaaHv9Q"/>
+<div class="absolute top-4 right-4 bg-brand-gold text-background px-3 py-1 font-label-caps text-[10px] rounded">BEST SELLER</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Bakso Urat Jumbo</h3>
+<span class="text-brand-red font-bold">Rp 35k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Bakso bertekstur kasar yang kaya akan serat daging sapi murni. Sangat marem!</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700 delay-100" data-reveal="">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of 'Bakso Halus Premium' served in a translucent glass bowl. The small, perfectly smooth and round meatballs sit in a crystal clear, aromatic broth with golden droplets of fat. Fresh celery leaves and delicate rice noodles add to the elegance. The style is minimalist and clean, with a focus on purity and premium ingredients, captured in a bright yet cinematic light setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLazNDDjUIziD10wu3S49EAeQVfUHyG6nMKY2ZAI8hSFXwCxATcLlOmLGErJkgfOD5QtGznpJ27XZvCzO8p-1vv_hH8-pCb0N4z1NHAhAtesvH0Vey8j7J9xFIbawH7nRj3-VX7-w3-AXT1Ho6_qkzFnRGO-K1Q0_MS1TsQzhuazrqni0q1oqOb9XKvpR1av25r47Q90ZKdHePEOKSigW6LmPkMdpMXox5LowcA00KTijs8BP1BheL1wRLRoAglZJxxlGFJsmsXA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Halus Premium</h3>
+<span class="text-brand-red font-bold">Rp 30k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Bakso dengan tekstur selembut sutra, dibuat dari bagian daging sapi pilihan tanpa lemak.</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700 delay-200" data-reveal="">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vibrant and intense photo of 'Bakso Mercon'. The meatball is split open to reveal a fiery red chili filling. Bright red chilies are scattered in the spicy, deep orange broth. The scene is dynamic and hot, with visible steam and a dark wood background that makes the red colors pop. The lighting is dramatic, casting deep shadows to create a high-contrast, appetising look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9iZ4NuWT5RhtxKqKmgw0pxDOQK0CJh0l7bLinzsMwmd2N4TW_FJl2MdsIjPnKHWNznuK9j3YxgMO9iTMvQWDvjvmInQ4VVAOmyZ1J7oHZuClW5kefN_AQZxTXC-6ppDmQdzZI7S3p-U3Upjr_y5-dn_6q1kUcDRq5kTorlgvlwA0ekVJ6jtbsAN6xwMUsE3HNYcaFAtMqdSsrnbrEpYyEfMUbXTMA0-9ZFEa4OYuu7vNq1Xg0Q_9cUput-_nsw8XVnQHtA6p4PQ"/>
+<div class="absolute top-4 right-4 bg-brand-red text-white px-3 py-1 font-label-caps text-[10px] rounded">HOT &amp; SPICY</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Bakso Mercon</h3>
+<span class="text-brand-red font-bold">Rp 32k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Isian cabai rawit melimpah yang meledak di mulut. Khusus bagi pecinta pedas sejati.</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700 delay-300" data-reveal="">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern food photography of 'Bakso Keju Lumer'. A large meatball is being pulled apart, showing long strands of melting golden cheese. The background is a sleek, dark slate plate. The lighting highlights the glossy melted cheese and the tender texture of the meatball. The overall aesthetic is contemporary and indulgent, focusing on the cheese-pull effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjLrLF0z7a7L7yX4Ka0p3k8OSnSOnM8SAMO6Ye3BUwelX_cXGBjDltn3HXlUhxh4iAWCNkW7mpVn_MUkmYsJkSGHWEHyd25TNEft0iF3-tSMfhnOm8tSdp4l-p0snYSi6eEF2sRDZyNyU80QmxBglcBZ-nE7ftgOUlg1WI6vmizzaltSyV5lrqwHnghYOJ6EOCJnke7WmxoHFuDhYmg45qWpdX2qWqrv3adAXiQSpHinJCY8QuJx7Vigff1aWmknQJDBkx6ifV7g"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Keju Lumer</h3>
+<span class="text-brand-red font-bold">Rp 34k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Perpaduan daging sapi gurih dengan lelehan keju mozzarella premium di dalamnya.</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700 delay-400" data-reveal="">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Epic shot of 'Bakso Beranak' in a large stone bowl. One giant meatball is cracked open, revealing several smaller meatballs and quail eggs tucked inside. The broth is rich and steamy, decorated with a sprinkle of scallions. The setting is atmospheric and grand, using low-key lighting to emphasize the 'hidden treasure' concept of the dish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA841kgmd35AS8rtV4jXcIQcV4LBoj2yKTmv_WHJlLOTozgK9tWRf5VCrjskB3BF2OjLztBSnWhCaf0ji4WgnciLa1i15nxLI0V4gsr4LlbkSaBks0BzFZpqZCtkvajrdrbc4hs0PDApqCQZEihyoLCss4su6TF1FWdi3u0J6sm4y-YSLG-vo7Uz4ABUpsdDeM-_uOqX-aYYRdOSvs1paVVyD2Kvjk6DcWsjId10Zlr9lponojDk9aclGmtRegxetuxxPgqjtYzbw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Bakso Beranak</h3>
+<span class="text-brand-red font-bold">Rp 45k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Bakso raksasa yang berisi anak-anak bakso kecil dan telur puyuh di dalamnya.</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group relative glass-card rounded-xl overflow-hidden opacity-0 translate-y-12 transition-all duration-700 delay-500" data-reveal="">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxury presentation of 'Spesial Komplit' bakso. A wide bowl containing all types of meatballs, tofu, fried wontons, and greens. The composition is balanced and artistic, with each element perfectly placed. The lighting is soft and diffuse, creating a high-end restaurant feel. Gold accents from the cutlery and plate rim echo the premium brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQbQ0_6N7aR1raplkjy20XphNv-yNchRlHbkkeJzfFVdphlDPL0vpsDavmNLu5W7VEWBCg20msvSNiyOD_dBA_EtpHtGaLcr-ex516uZlqulNKB_TdRM6PdyNlWox4sjqTEtztqKiL8GcGx75_622rEi2ttEO_yR09nyDMi-rJVaAfXzzj-y2sV0aTe64CCiyCwDA_RUhxrfuo7fJIWWI4HKujNiTK_zk7GHH1vI8fN5wWQi50Lt9oVAAjdk5kox3T9jBTQLOlVw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-display-lg text-title-md text-primary">Spesial Komplit</h3>
+<span class="text-brand-red font-bold">Rp 50k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6">Kombinasi semua varian bakso dalam satu mangkuk royal. Puas maksimal!</p>
+<button class="w-full py-3 border border-brand-gold/30 text-brand-gold font-label-caps text-label-caps hover:bg-brand-gold hover:text-background transition-all">PESAN SEKARANG</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics -->
+<section class="py-24 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute inset-0 opacity-5 batik-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+<div class="px-container-padding-desktop max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+<div class="opacity-0 scale-90 transition-all duration-700" data-reveal="">
+<div class="font-display-lg text-display-lg text-brand-gold mb-2 counter" data-target="10000">0</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Porsi Terjual</p>
+</div>
+<div class="opacity-0 scale-90 transition-all duration-700 delay-100" data-reveal="">
+<div class="font-display-lg text-display-lg text-brand-gold mb-2 counter" data-target="5000">0</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pelanggan Puas</p>
+</div>
+<div class="opacity-0 scale-90 transition-all duration-700 delay-200" data-reveal="">
+<div class="font-display-lg text-display-lg text-brand-gold mb-2 counter" data-target="15">0</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tahun Pengalaman</p>
+</div>
+<div class="opacity-0 scale-90 transition-all duration-700 delay-300" data-reveal="">
+<div class="font-display-lg text-display-lg text-brand-gold mb-2 counter" data-target="4.9">0</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Rating Rata-rata</p>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-section-gap px-container-padding-desktop max-w-screen-2xl mx-auto" id="gallery">
+<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700" data-reveal="">
+<span class="font-label-caps text-label-caps text-brand-gold mb-2 block uppercase">Galeri</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Potret Nikmate BaksoJawa</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="col-span-2 row-span-2 rounded-xl overflow-hidden glass-card group opacity-0 translate-y-12 transition-all duration-700" data-reveal="">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A wide angle premium cinematic photograph of the BaksoJawa restaurant interior. Warm, amber-colored lighting creates a cozy yet high-end atmosphere. Elegant wooden tables are set with golden-rimmed bowls. Traditional Javanese batik patterns are subtly integrated into the decor. People are seen enjoying their meals in the background, out of focus, creating a lively but sophisticated environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ7clOvogB438qCCsFb130dbOhc3K1BZJnqQLhypij5HwL-lj9aD3O8PD5lD4_ShnNcMq7u7uetrzMcz5YbcJ0-TkI-tW3jl1rCI0umdntPQLWp8bMUQr6akeopEAoB3Gi_j034xbbiqrjGZD-uIs0RheBCxfMMIkDaBIUk1qVOqQgfihSaqHIfw1bbhpzhILEIFkxVNlaxq4lLh9Le4rDEMnTfbONniesa8Hll8lt56l193cVhVGHyc-QoGgDJYVDp-JMDA5jYg"/>
+</div>
+<div class="rounded-xl overflow-hidden glass-card group opacity-0 translate-y-12 transition-all duration-700 delay-100" data-reveal="">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Extreme close-up of steam rising from a hot bowl of bakso. The steam is illuminated by a spotlight, creating a ethereal, magical effect. In the background, the golden brand logo is slightly visible. The image emphasizes the freshness and heat of the food, presented in a very artistic, professional culinary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7cT_SWHTwUl8DaexoqILSUrKkHyz6O1C-R94b2fM0fjA0EA-pM58yEnuJhjKTrfBHhkT_hUng9arnVlTFIpJQlU6T28Mfd0UCixYkFQG-NFtIPfU4fO08yH32OZdE_-24woCGvR6YuHGQQOEWdbrulTiOu_ludt1VsjBv4kJJ19u3X8DyJi6GpIdW-bN4Uyt2B8iGhJiJPdZY098LSBIepobdO6SRhkBKtUKBo-KAn5ehoOs282AASawfddVHlyXKTo1OBDoMMQ"/>
+</div>
+<div class="rounded-xl overflow-hidden glass-card group opacity-0 translate-y-12 transition-all duration-700 delay-200" data-reveal="">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A top-down aesthetic shot of a tray holding various bowls of different bakso types. The tray is made of dark, polished wood. Each bowl is garnished differently with fresh herbs and spices. The colors are rich and vibrant, with deep reds, bright greens, and golden broth. The composition is structured and high-end, suitable for a luxury food magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgvUT3D_Ahwe87HKqgBSH8dtGTN4RwEz89pUg-YGKJ5H6swSj1TiDUPStZKmXkWVX4_xXyM0CVCdkzY-Ns0sVgY87Bnr3oUVIPCDwyt6rbiqmD6rBnh-g-lQ2OtXbljRIpLorEDHb1DJ5N1UXYstH0x6xJfKP-vLN33VMB73vo658ofkBgiJug-2WbgnLJGuoXbHTLH93oKf2XklJeu8u7UPhwxs0Vs_tlznMeL_sNSKl2G0o67h2B7p9HL0iF4qVyK3vpqytWkg"/>
+</div>
+<div class="col-span-2 rounded-xl overflow-hidden glass-card group opacity-0 translate-y-12 transition-all duration-700 delay-300" data-reveal="">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A warm, emotional close-up shot of two people sharing a meal of bakso. Their hands are visible, holding traditional spoons and forks. The lighting is soft and golden, suggesting a late afternoon setting. The focus is on the communal aspect of 'Mangan ora mangan sing penting kumpul'. The overall vibe is heartwarming, premium, and culturally rich." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUZpChwcLqa6TYbqxui9o1462yCN1rJULy160G_04sxXpA1GQMeUF4GNQNi8kasQQvw-SHSysgkocgfMXVfSUcNZ8uOG-ecLhQ1sWanBtlcf67gg63_eDeRCUQHxiLq5vrEotKqtFnaFmT3gmcndvc9ZIzThTYceZbAkOhoKLzy7wwFYfIboqLDcQcM30o70Lk0wxEjWbqUeU8Lu7G6XRk5FoGSxR6Wg1GwsaAdsg7VxZ4uoT0zNuW9vYFnSmmcT73BXPcsmEtXA"/>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-section-gap bg-surface-container-low relative">
+<div class="px-container-padding-desktop max-w-screen-2xl mx-auto">
+<div class="text-center mb-20 opacity-0 translate-y-8 transition-all duration-700" data-reveal="">
+<span class="font-label-caps text-label-caps text-brand-gold mb-2 block uppercase">Proses Kami</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Seni Membuat Kesempurnaan</h2>
+<p class="italic font-display-lg text-title-md text-on-surface-variant">"Sing apik butuh proses, kaya rasa BaksoJawa."</p>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-8">
+<!-- Progress Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[2px] bg-brand-gold/20 -z-10"></div>
+<div class="flex-1 text-center opacity-0 translate-y-12 transition-all duration-700" data-reveal="">
+<div class="w-20 h-20 rounded-full bg-brand-gold text-background flex items-center justify-center mx-auto mb-6 font-display-lg text-headline-lg shadow-lg relative">
+                            1
+                            <div class="absolute -inset-2 border border-brand-gold/30 rounded-full animate-ping opacity-20"></div>
+</div>
+<h4 class="font-title-md text-primary mb-2">Milih Daging</h4>
+<p class="text-body-sm text-on-surface-variant">Seleksi daging sapi segar setiap subuh.</p>
+</div>
+<div class="flex-1 text-center opacity-0 translate-y-12 transition-all duration-700 delay-100" data-reveal="">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-brand-gold text-brand-gold flex items-center justify-center mx-auto mb-6 font-display-lg text-headline-lg">2</div>
+<h4 class="font-title-md text-primary mb-2">Giling Halus</h4>
+<p class="text-body-sm text-on-surface-variant">Proses penggilingan dengan es agar tekstur tetap kenyal.</p>
+</div>
+<div class="flex-1 text-center opacity-0 translate-y-12 transition-all duration-700 delay-200" data-reveal="">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-brand-gold text-brand-gold flex items-center justify-center mx-auto mb-6 font-display-lg text-headline-lg">3</div>
+<h4 class="font-title-md text-primary mb-2">Formasi Rasa</h4>
+<p class="text-body-sm text-on-surface-variant">Pencampuran 17 bumbu rempah rahasia.</p>
+</div>
+<div class="flex-1 text-center opacity-0 translate-y-12 transition-all duration-700 delay-300" data-reveal="">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-brand-gold text-brand-gold flex items-center justify-center mx-auto mb-6 font-display-lg text-headline-lg">4</div>
+<h4 class="font-title-md text-primary mb-2">Masak Sabar</h4>
+<p class="text-body-sm text-on-surface-variant">Perebusan lambat untuk mengunci saripati daging.</p>
+</div>
+<div class="flex-1 text-center opacity-0 translate-y-12 transition-all duration-700 delay-400" data-reveal="">
+<div class="w-20 h-20 rounded-full bg-brand-gold text-background flex items-center justify-center mx-auto mb-6 font-display-lg text-headline-lg shadow-lg">5</div>
+<h4 class="font-title-md text-primary mb-2">Siap Saji</h4>
+<p class="text-body-sm text-on-surface-variant">Dihidangkan panas dengan cinta dari dapur kami.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-section-gap px-container-padding-desktop max-w-4xl mx-auto" id="faq">
+<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700" data-reveal="">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Pertanyaan Umum</h2>
+<div class="batik-divider max-w-xs mx-auto mb-8"></div>
+</div>
+<div class="space-y-4">
+<details class="group glass-card rounded-xl overflow-hidden opacity-0 translate-y-8 transition-all duration-700" data-reveal="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-title-md text-primary">Apakah BaksoJawa melayani pesan antar?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-brand-gold">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed">
+                        Ya, kami tersedia di semua platform delivery online utama (GoFood, GrabFood, ShopeeFood) serta melayani delivery internal untuk radius 3km dari outlet kami.
+                    </div>
+</details>
+<details class="group glass-card rounded-xl overflow-hidden opacity-0 translate-y-8 transition-all duration-700 delay-100" data-reveal="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-title-md text-primary">Apakah daging yang digunakan 100% sapi?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-brand-gold">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed">
+                        Tentu saja. Kami hanya menggunakan 100% daging sapi bagian tenderloin dan paha belakang berkualitas tinggi tanpa campuran daging lain.
+                    </div>
+</details>
+<details class="group glass-card rounded-xl overflow-hidden opacity-0 translate-y-8 transition-all duration-700 delay-200" data-reveal="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-title-md text-primary">Bagaimana jika ingin reservasi untuk acara besar?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-brand-gold">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed">
+                        Silakan hubungi WhatsApp marketing kami minimal H-3 untuk reservasi tempat atau pemesanan katering acara pernikahan, arisan, maupun kantor.
+                    </div>
+</details>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="relative py-32 overflow-hidden">
+<div class="absolute inset-0 bg-brand-red z-0">
+<div class="absolute inset-0 opacity-20" style="background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-brand-red via-brand-red/90 to-transparent"></div>
+</div>
+<div class="relative z-10 px-container-padding-desktop max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-2xl opacity-0 -translate-x-12 transition-all duration-1000" data-reveal="">
+<h2 class="font-display-lg text-display-lg text-white mb-6 leading-tight">Yuk Rasakna Nikmate Bakso Jawa Sing Saktenane!</h2>
+<p class="text-xl text-white/80 mb-10 font-body-lg">Kunjungi outlet terdekat atau pesan sekarang melalui ponsel Anda. Kehangatan Javanese Hospitality menanti Anda.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-brand-gold text-background px-10 py-5 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform flex items-center gap-2">
+                            PESAN SEKARANG <span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-white/20 transition-all">
+                            CARI OUTLET
+                        </button>
+</div>
+</div>
+<div class="relative group opacity-0 translate-x-12 transition-all duration-1000" data-reveal="">
+<div class="absolute -inset-4 bg-brand-gold/10 rounded-full blur-3xl animate-pulse"></div>
+<img alt="BaksoJawa Gold" class="w-64 h-64 relative z-10 motion-safe:animate-[bounce_5s_infinite]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkMNjY0HBQzdCTUpZwS667KLvFb8FUGBfXglS7xMctD4QrwB9YYjJTD2qFvcH5-5qDD6ZRTa7k_8ej0-SbWYvbzuwse6qAADteA0c0J3lmiG5l1w4NbqWPqaJ-YIdkbwxvpZcVDKM-bitWXd6dRcdMnQ-TB7v-MVzGHI8OEg0Oj2cOfhArbT3NSALvaVYqF5jo_qUZHCrKUysIcpDAZmWSqKptH6wt1fneZSvH6W57kRfyxgejeghL2QBfUNvcpsM728tcH7BYA"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-container-padding-desktop max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkMNjY0HBQzdCTUpZwS667KLvFb8FUGBfXglS7xMctD4QrwB9YYjJTD2qFvcH5-5qDD6ZRTa7k_8ej0-SbWYvbzuwse6qAADteA0c0J3lmiG5l1w4NbqWPqaJ-YIdkbwxvpZcVDKM-bitWXd6dRcdMnQ-TB7v-MVzGHI8OEg0Oj2cOfhArbT3NSALvaVYqF5jo_qUZHCrKUysIcpDAZmWSqKptH6wt1fneZSvH6W57kRfyxgejeghL2QBfUNvcpsM728tcH7BYA"/>
+<span class="font-display-lg text-headline-lg text-primary-container">BaksoJawa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    Menghidangkan kehangatan tradisi Jawa melalui semangkuk bakso premium sejak 2009. Kualitas tanpa kompromi, rasa tanpa tanding.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined text-lg">chat</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-title-md text-primary mb-6">Navigasi</h4>
+<ul class="space-y-4 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-brand-gold transition-colors" href="#">Beranda</a></li>
+<li><a class="text-on-surface-variant hover:text-brand-gold transition-colors" href="#menu">Menu Favorit</a></li>
+<li><a class="text-on-surface-variant hover:text-brand-gold transition-colors" href="#about">Kisah Kami</a></li>
+<li><a class="text-on-surface-variant hover:text-brand-gold transition-colors" href="#gallery">Galeri Foto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-primary mb-6">Hubungi Kami</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-gold">location_on</span>
+                        Jl. Malioboro No. 456, Yogyakarta, Indonesia
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-gold">call</span>
+                        +62 274 1234 5678
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-gold">mail</span>
+                        sugengrawuh@baksojawa.com
+                    </li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-primary mb-6">Filosofi</h4>
+<div class="p-6 glass-card rounded-xl italic text-on-surface-variant border-l-2 border-brand-gold">
+                    "Urip iku cekak, mangan bakso sing enak luwih becik."
+                </div>
+<div class="mt-8">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Dapatkan info promo terbaru:</p>
+<div class="flex">
+<input class="bg-surface-variant border-none rounded-l-lg p-3 text-body-sm w-full focus:ring-1 focus:ring-brand-gold" placeholder="Email Anda" type="email"/>
+<button class="bg-brand-gold text-background px-4 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-container-padding-desktop mt-20 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-on-surface-variant/60">
+<p>© 2024 BaksoJawa. Mangan Ora Mangan Sing Penting Kumpul.</p>
+<div class="flex gap-8">
+<a class="hover:text-brand-gold transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-brand-gold transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
+        document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('opacity-0', 'pointer-events-none');
+                startScrollReveal();
+            }, 1500);
+        });
+
+        // Reveal on Scroll
+        function startScrollReveal() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-y-12', '-translate-x-12', 'translate-x-12', 'scale-90');
+                        entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100');
+                        
+                        // Handle counter animation
+                        if (entry.target.classList.contains('counter')) {
+                            animateCounter(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+            document.querySelectorAll('.counter').forEach(el => observer.observe(el));
+        }
+
+        // Counter Animation
+        function animateCounter(el) {
+            const target = parseFloat(el.getAttribute('data-target'));
+            const duration = 2000;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target % 1 === 0 ? target.toLocaleString() : target.toFixed(1);
+                    clearInterval(timer);
+                } else {
+                    el.textContent = target % 1 === 0 ? Math.floor(current).toLocaleString() : current.toFixed(1);
+                }
+            }, stepTime);
+        }
+
+        // Parallax simple effect
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const parallaxEls = document.querySelectorAll('.parallax');
+            parallaxEls.forEach(el => {
+                const speed = 0.5;
+                el.style.transform = `translateY(${scroll * speed}px)`;
+            });
+        });
+    </script>
+</body></html>
