@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-screen-2xl mx-auto px-container-padding-desktop mt-20 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-on-surface-variant/60">
-        <p>© 2024 BaksoJawa. Mangan Ora Mangan Sing Penting Kumpul.</p>
+        <p>© 2026 BaksoJawa. Mangan Ora Mangan Sing Penting Kumpul.</p>
         <div className="flex gap-8">
           <Link className="hover:text-brand-gold transition-colors" href="#">Privacy Policy</Link>
           <Link className="hover:text-brand-gold transition-colors" href="#">Terms of Service</Link>
