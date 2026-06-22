@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="font-display-lg text-headline-lg text-primary-container">BaksoJawa</span>
           </div>
           <p className="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
-            Menghidangkan kehangatan tradisi Jawa melalui semangkuk bakso premium sejak 2009. Kualitas tanpa kompromi, rasa tanpa tanding.
+            Menghidangkan kehangatan tradisi Jawa melalui semangkuk bakso premium sejak 2009. Kualitas tanpa kompromi, rasa tanpa tanding jos.
           </p>
           <div className="flex gap-4">
             <a className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-brand-gold transition-colors" href="#">
