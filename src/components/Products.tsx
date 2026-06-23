@@ -26,7 +26,7 @@ export default function Products() {
         </div>
         <div className="hidden md:block opacity-0 translate-x-8 transition-all duration-700" data-reveal="">
           <p className="text-on-surface-variant max-w-xs text-right">
-            Setiap porsi disajikan dengan mie kuning, bihun, sayuran segar, dan bawang goreng melimpah.
+            Setiap porsi disajikan dengan mie kuning, bihun, sayuran segar, dan bawang goreng gurih melimpah.
           </p>
         </div>
       </div>
