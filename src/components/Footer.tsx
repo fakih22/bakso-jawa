@@ -46,7 +46,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-brand-gold">call</span>
-              +62 274 1234 5678
+              +62 274 1234 5670
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-brand-gold">mail</span>
