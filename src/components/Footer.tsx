@@ -49,7 +49,7 @@ export default function Footer() {
               +62 274 124 5670
             </li>
             <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-brand-gold">mail</span>
+              <span className="material-symbols-outlined text-brand-gold">email</span>
               baksojawa@gmail.com
             </li>
           </ul>
